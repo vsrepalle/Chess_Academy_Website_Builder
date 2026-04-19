@@ -69,8 +69,16 @@
         </div>
       </div>
     </div>
-    <div class="glass-card rounded-[3rem] h-80 flex items-center justify-center text-gray-600 italic">
-       [ Google Maps - Interactive View ]
+    <div class="glass-card rounded-[3rem] h-80 overflow-hidden border border-white/10 shadow-2xl group">
+      <iframe 
+        [src]="mapUrl()" 
+        width="100%" 
+        height="100%" 
+        style="border:0; filter: grayscale(1) invert(0.9) contrast(1.2);" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
     </div>
   </div>
 </section>
+

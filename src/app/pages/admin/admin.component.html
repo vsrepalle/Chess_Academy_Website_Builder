@@ -36,7 +36,25 @@
       <!-- LEFT: VISUAL EDITOR -->
       <div class="space-y-12">
         
-        <!-- Identity -->
+        
+<section class="space-y-4">
+  <h3 class="text-xs font-bold text-yellow-500 uppercase tracking-widest mb-4">Color Palette</h3>
+  <div class="grid grid-cols-2 gap-4">
+    <div class="space-y-2">
+      <label class="text-[10px] text-gray-500 uppercase font-bold">Main Background</label>
+      <input type="color" [(ngModel)]="editableConfig.bgColor" (ngModelChange)="updateRawJsonPreview()" class="w-full h-12 bg-transparent border-none cursor-pointer">
+    </div>
+    <div class="space-y-2">
+      <label class="text-[10px] text-gray-500 uppercase font-bold">Accent Color (Hex)</label>
+      <input [(ngModel)]="editableConfig.primaryColor" (ngModelChange)="updateRawJsonPreview()" class="w-full bg-white/5 border border-white/10 p-3 rounded-xl">
+    </div>
+    <div class="space-y-2">
+      <label class="text-[10px] text-gray-500 uppercase font-bold">Secondary BG</label>
+      <input type="color" [(ngModel)]="editableConfig.secondaryBgColor" (ngModelChange)="updateRawJsonPreview()" class="w-full h-12 bg-transparent border-none cursor-pointer">
+    </div>
+  </div>
+</section>
+<!-- Identity -->
         <section class="space-y-4">
           <h3 class="text-xs font-bold text-yellow-500 uppercase tracking-widest mb-4">1. Brand Identity</h3>
           <div class="grid grid-cols-2 gap-4">
@@ -109,3 +127,4 @@
     </div>
   </div>
 </div>
+

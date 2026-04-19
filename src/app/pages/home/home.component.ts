@@ -1,5 +1,6 @@
-import { Component, inject, OnInit, OnDestroy, signal } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { WebsiteConfigService } from '../../website-config.service';
 
 @Component({
@@ -10,17 +11,29 @@ import { WebsiteConfigService } from '../../website-config.service';
 })
 export class HomeComponent implements OnInit, OnDestroy {
   public configService = inject(WebsiteConfigService);
+  private sanitizer = inject(DomSanitizer);
+  
   public config = this.configService.settings;
   public currentSlide = signal(0);
   private timer: any;
+
+  // FIXED: Using computed signal. 
+  // This will ONLY re-run if config().address changes.
+  // It will NOT re-run when the currentSlide() changes.
+  public mapUrl = computed(() => {
+    const address = encodeURIComponent(this.config().address);
+    const url = `https://maps.google.com/maps?q=${address}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  });
 
   ngOnInit() {
     this.timer = setInterval(() => this.nextSlide(), 3000);
   }
 
   nextSlide() {
-    if(this.config().heroImages.length > 0) {
-      this.currentSlide.update(val => (val + 1) % this.config().heroImages.length);
+    const total = this.config().heroImages.length;
+    if(total > 0) {
+      this.currentSlide.update(val => (val + 1) % total);
     }
   }
 
@@ -29,7 +42,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   watchDemo() {
-    alert("Video Demo coming soon! Opening Youtube Placeholder...");
     window.open('https://www.youtube.com/results?search_query=chess+for+kids', '_blank');
   }
 
