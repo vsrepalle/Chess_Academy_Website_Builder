@@ -1,0 +1,42 @@
+{
+    "name":  "Checkmate Legends Academy",
+    "brandName":  "LEGENDS",
+    "heroTitle":  "Victory is a Choice.",
+    "heroSubtext":  "Premium 1-on-1 coaching for tournament-level players.",
+    "primaryColor":  "emerald-500",
+    "address":  "45 Grandmaster Plaza, Bangalore",
+    "phone":  "+91 88888 77777",
+    "email":  "elite@checkmatelegends.com",
+    "missionTitle":  "The Pursuit of Perfection",
+    "missionText":  "Our philosophy is built on rigorous analysis and mental endurance.",
+    "stats":  [
+                  {
+                      "label":  "FIDE Rated",
+                      "value":  "450+"
+                  },
+                  {
+                      "label":  "Trophies",
+                      "value":  "1200"
+                  }
+              ],
+    "coaches":  [
+                    {
+                        "name":  "Vikram Singh",
+                        "title":  "International Master",
+                        "photo":  "https://i.pravatar.cc/150?u=vikram"
+                    }
+                ],
+    "programs":  [
+                     {
+                         "level":  "PRO",
+                         "title":  "The Opening Lab",
+                         "age":  "10-18",
+                         "description":  "Deep dive into Sicilian defense."
+                     }
+                 ],
+    "heroImages":  [
+                       "assets/images/slide1.jpg",
+                       "assets/images/slide2.jpg",
+                       "assets/images/slide3.jpg"
+                   ]
+}

@@ -1,0 +1,42 @@
+{
+    "name":  "Viswa Chess Academy",
+    "brandName":  "VISWA",
+    "heroTitle":  "Build Smart Minds Through Chess",
+    "heroSubtext":  "Expert coaching for kids aged 5-15.",
+    "primaryColor":  "yellow-500",
+    "address":  "123 Strategy Lane, Chennai",
+    "phone":  "+91 98765 43210",
+    "email":  "info@viswachess.com",
+    "missionTitle":  "Our Strategic Mission",
+    "missionText":  "Developing logic and patience through elite chess coaching.",
+    "stats":  [
+                  {
+                      "label":  "Students",
+                      "value":  "1000+"
+                  },
+                  {
+                      "label":  "Champions",
+                      "value":  "25+"
+                  }
+              ],
+    "coaches":  [
+                    {
+                        "name":  "R. Viswanathan",
+                        "title":  "Grandmaster",
+                        "photo":  "https://i.pravatar.cc/150?u=1"
+                    }
+                ],
+    "programs":  [
+                     {
+                         "level":  "01",
+                         "title":  "Pawn Power",
+                         "age":  "5-7",
+                         "description":  "Basics for beginners."
+                     }
+                 ],
+    "heroImages":  [
+                       "assets/images/slide1.jpg",
+                       "assets/images/slide2.jpg",
+                       "assets/images/slide3.jpg"
+                   ]
+}

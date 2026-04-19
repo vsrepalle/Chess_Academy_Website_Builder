@@ -1,0 +1,20 @@
+<div class="pt-32 px-6 max-w-7xl mx-auto pb-32">
+  <div class="text-center mb-16">
+    <h2 class="text-5xl font-black mb-4 text-gradient">Custom Curriculums</h2>
+    <p class="text-gray-400">Structured growth paths tailored to age and skill.</p>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-8">
+    @for (prog of config().programs; track prog.title) {
+      <div class="glass p-10 rounded-[2.5rem] hover:-translate-y-2 transition-all border-white/5">
+        <div class="text-gray-500 font-bold mb-2 tracking-widest uppercase text-xs">Level {{ prog.level }}</div>
+        <h3 class="text-2xl font-bold mb-2">{{ prog.title }}</h3>
+        <span class="text-xs text-yellow-500 uppercase font-bold">Ages {{ prog.age }}</span>
+        <p class="text-gray-400 mt-6 text-sm leading-relaxed">{{ prog.description }}</p>
+        <button class="w-full mt-8 py-3 bg-white/5 hover:bg-yellow-500 hover:text-black transition font-bold rounded-xl text-sm">
+          Join This Batch
+        </button>
+      </div>
+    }
+  </div>
+</div>

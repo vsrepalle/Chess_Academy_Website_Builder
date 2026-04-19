@@ -1,0 +1,36 @@
+<nav class="fixed top-0 w-full z-50 px-6 py-6 flex justify-center">
+  <div class="max-w-7xl w-full glass-card rounded-[2rem] px-8 py-4 flex justify-between items-center border-white/5 shadow-2xl">
+    
+    <!-- Logo -->
+    <div class="flex items-center gap-3 cursor-pointer group" routerLink="/">
+      <div class="w-10 h-10 rounded-xl flex items-center justify-center text-black font-black transition-transform group-hover:rotate-12"
+           [style.background-color]="config().primaryColor">
+        {{ config().brandName[0] }}
+      </div>
+      <span class="text-2xl font-black tracking-tighter uppercase italic">
+        {{ config().brandName }}<span [style.color]="config().primaryColor">.</span>
+      </span>
+    </div>
+
+    <!-- Links -->
+    <div class="hidden lg:flex items-center gap-10 font-bold text-xs uppercase tracking-[0.2em] text-gray-400">
+      <a routerLink="/" routerLinkActive="text-white scale-110" [routerLinkActiveOptions]="{exact: true}" class="hover:text-white transition transform">Home</a>
+      <a routerLink="/programs" routerLinkActive="text-white scale-110" class="hover:text-white transition transform">Programs</a>
+      <a routerLink="/about" routerLinkActive="text-white scale-110" class="hover:text-white transition transform">About</a>
+      <a routerLink="/contact" routerLinkActive="text-white scale-110" class="hover:text-white transition transform">Contact</a>
+    </div>
+
+    <!-- CTA -->
+    <div class="flex items-center gap-4">
+      <a routerLink="/admin" class="text-[10px] font-bold text-gray-600 hover:text-white uppercase tracking-widest transition">Admin</a>
+      <button (click)="configService.navigateToBooking()" 
+              class="hidden md:block px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest transition-all hover:brightness-110"
+              [style.background-color]="config().primaryColor"
+              [style.color]="'black'">
+        Free Trial
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main><router-outlet></router-outlet></main>

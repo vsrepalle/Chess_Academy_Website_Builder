@@ -1,0 +1,76 @@
+<!-- HERO SLIDER SECTION (Keep previous logic) -->
+<section class="relative h-screen flex items-center justify-center px-6 overflow-hidden">
+  <div class="absolute inset-0 -z-10">
+    @for (img of config().heroImages; track $index) {
+      <div class="absolute inset-0 transition-opacity duration-1000" [ngClass]="currentSlide() === $index ? 'opacity-30' : 'opacity-0'">
+        <img [src]="img" class="w-full h-full object-cover">
+      </div>
+    }
+  </div>
+  <div class="max-w-5xl text-center relative z-10">
+    <h1 class="text-7xl md:text-9xl font-black mb-6 italic text-white">{{ config().heroTitle }}</h1>
+    <p class="text-xl text-gray-400 mb-10">{{ config().heroSubtext }}</p>
+    <button (click)="bookNow()" class="btn-primary" [style.background-color]="config().primaryColor">Book Free Trial</button>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="flex flex-wrap justify-center gap-12 py-16 bg-white/[0.02] border-y border-white/5">
+  @for (stat of config().stats; track stat.label) {
+    <div class="text-center">
+      <div class="text-4xl font-black italic" [style.color]="config().primaryColor">{{ stat.value }}</div>
+      <div class="text-[10px] uppercase tracking-[0.3em] text-gray-500 font-bold">{{ stat.label }}</div>
+    </div>
+  }
+</div>
+
+<!-- COACHES / MENTORS SECTION -->
+<section class="py-32 px-6 max-w-7xl mx-auto">
+  <div class="mb-20 text-center">
+    <h2 class="text-5xl font-black italic mb-4">Meet the <span [style.color]="config().primaryColor">Masters</span></h2>
+    <p class="text-gray-500">Learn from internationally recognized FIDE titles and Grandmasters.</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+    @for (coach of config().coaches; track coach.name) {
+      <div class="glass-card group rounded-[2.5rem] overflow-hidden p-4 hover:border-white/20 transition-all duration-500">
+        <div class="relative h-64 rounded-[2rem] overflow-hidden mb-6">
+          <img [src]="coach.photo" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+            <span class="text-xs font-bold uppercase tracking-widest text-white">View Profile</span>
+          </div>
+        </div>
+        <h4 class="text-2xl font-black italic px-4">{{ coach.name }}</h4>
+        <p class="text-gray-500 text-sm px-4 pb-4 uppercase tracking-widest">{{ coach.title }}</p>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- CONTACT & ADDRESS FOOTER -->
+<section class="py-32 px-6 border-t border-white/5 bg-white/[0.01]">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20">
+    <div>
+      <h2 class="text-5xl font-black italic mb-8">Visit the <br><span [style.color]="config().primaryColor">Academy</span></h2>
+      <div class="space-y-6">
+        <div>
+          <span class="text-[10px] uppercase font-bold text-gray-600 tracking-widest block mb-2">Location</span>
+          <p class="text-xl text-gray-300">{{ config().address }}</p>
+        </div>
+        <div class="flex gap-12">
+          <div>
+            <span class="text-[10px] uppercase font-bold text-gray-600 tracking-widest block mb-2">Email Us</span>
+            <p class="text-gray-300 font-bold">{{ config().email }}</p>
+          </div>
+          <div>
+            <span class="text-[10px] uppercase font-bold text-gray-600 tracking-widest block mb-2">Call Support</span>
+            <p class="text-gray-300 font-bold">{{ config().phone }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="glass-card rounded-[3rem] h-80 flex items-center justify-center text-gray-600 italic">
+       [ Google Maps - Interactive View ]
+    </div>
+  </div>
+</section>

@@ -1,0 +1,42 @@
+{
+    "name":  "The Royal Knight Chess Club",
+    "brandName":  "ROYAL",
+    "heroTitle":  "Where Little Kings Learn.",
+    "heroSubtext":  "A fun and engaging environment for children.",
+    "primaryColor":  "indigo-600",
+    "address":  "77 Castle Road, Mumbai",
+    "phone":  "+91 77777 00000",
+    "email":  "hello@royalknights.com",
+    "missionTitle":  "Cultivating Young Genius",
+    "missionText":  "We use chess to develop patience and kindness in every child.",
+    "stats":  [
+                  {
+                      "label":  "Kids",
+                      "value":  "2500"
+                  },
+                  {
+                      "label":  "Batches",
+                      "value":  "40+"
+                  }
+              ],
+    "coaches":  [
+                    {
+                        "name":  "Aunty Priya",
+                        "title":  "Senior Mentor",
+                        "photo":  "https://i.pravatar.cc/150?u=priya"
+                    }
+                ],
+    "programs":  [
+                     {
+                         "level":  "Kids",
+                         "title":  "Magic Moves",
+                         "age":  "4-6",
+                         "description":  "Learning through animated stories."
+                     }
+                 ],
+    "heroImages":  [
+                       "assets/images/slide1.jpg",
+                       "assets/images/slide2.jpg",
+                       "assets/images/slide3.jpg"
+                   ]
+}

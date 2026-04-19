@@ -1,0 +1,15 @@
+<div class="pt-32 px-6 max-w-4xl mx-auto text-center">
+  <h2 class="text-5xl font-black mb-8 text-gradient">{{ config().missionTitle }}</h2>
+  <p class="text-xl text-gray-400 leading-relaxed mb-16">
+    {{ config().missionText }}
+  </p>
+  
+  <div class="grid grid-cols-3 gap-4">
+    @for (stat of config().stats; track stat.label) {
+      <div class="glass p-6 rounded-2xl">
+        <div class="text-3xl font-black text-yellow-500">{{ stat.value }}</div>
+        <div class="text-xs text-gray-500 uppercase tracking-widest">{{ stat.label }}</div>
+      </div>
+    }
+  </div>
+</div>
